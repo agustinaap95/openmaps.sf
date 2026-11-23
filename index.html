@@ -45,10 +45,10 @@
     const map = L.map('map').setView([-31.4279, -62.0827], 13);
 
     // 2. Mapa base limpio que no bloquea peticiones
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; OpenStreetMap &copy; CARTO',
-      maxZoom: 19
-    }).addTo(map);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles &copy; Esri &mdash; OpenStreetMap contributors',
+  maxZoom: 19
+}).addTo(map);
 
     // 3. Cargar y dibujar el archivo puntos.geojson
     fetch('puntos.geojson')
